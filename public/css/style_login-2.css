@@ -1,0 +1,65 @@
+/* Made with love by Mutiullah Samim*/
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+	background-image: url('../images/login-register.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	font-family: 'Numans', sans-serif;
+}
+
+.form-login{
+	width: 400px;
+	height: 100%;
+	background-color: #EEEEEE;
+}
+
+.frame-img{
+	height: 100px;
+	width: 100%;
+}
+
+.frame-img a img{
+	height: 100px;
+	width: 100px;
+	display: block;
+	margin: auto;
+}
+
+.temp{
+	height: 30px;
+}
+
+.input-1{
+	background-image: linear-gradient(#707cd2,#707cd2),linear-gradient(rgba(120,130,140,0.13),rgba(120,130,140,0.13));
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    float: none;
+    background-color: transparent;
+    background-position: center bottom,center calc(99%);
+    background-repeat: no-repeat;
+    background-size: 0 2px,100% 1px;
+    padding: 0;
+    transition: background 0s ease-out 0s;
+	    
+}
+
+.input-1:focus{
+    outline: none!important;
+    border: 0!important;
+}
+
+.btn-dangnhap{
+	background-color: #2cabe3;
+    border: 1px solid #2cabe3;
+}
+
+@media (max-width: 800px){
+	.form-login{
+		width: 100%;
+		height: 100%;
+	}
+}

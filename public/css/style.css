@@ -1,0 +1,940 @@
+.container-slides-book{
+    height: 245px;
+    overflow: hidden;
+}
+
+#slides-book{
+	width: 300%;
+    transition: 2s all;
+    float: left;
+}
+
+#slides-book a{
+	margin-right: 12px;
+	width: 175px;
+}
+
+#slides-book a img{
+	border-radius: 4px;
+}
+
+.slide-book{
+    width: 175px;
+    height: 245px;
+}
+
+.genre{
+	display: flex;
+    color: #171519;
+    padding: 10px 15px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.dung-laptop{
+	display: none!important;
+}
+
+.num1{
+	background-color: #d9534f !important;
+}
+
+.num2{
+	background-color: #ff5722 !important;
+}
+
+.num3{
+	background-color: #03a9f4 !important;
+}
+
+.num4{
+	background-color: #818a91 !important;
+}
+
+.num5{
+	background-color: #818a91 !important;
+}
+
+.num6{
+	background-color: #818a91 !important;
+}
+
+.num7{
+	background-color: #818a91 !important;
+}
+
+.num8{
+	background-color: #818a91 !important;
+}
+
+.num9{
+	background-color: #818a91 !important;
+}
+
+.num10{
+	background-color: #818a91 !important;
+}
+
+.color1{
+	color: #d9534f !important;
+}
+
+.color2{
+	color: #ff5722 !important;
+}
+
+.color3{
+	color: #03a9f4 !important;
+}
+
+.color4{
+	color: #009688 !important;
+}
+
+.color5{
+	color: #009688 !important;
+}
+
+.color6{
+	color: #009688 !important;
+}
+
+.color7{
+	color: #009688 !important;
+}
+
+.color8{
+	color: #009688 !important;
+}
+
+.color9{
+	color: #009688 !important;
+}
+
+.color10{
+	color: #009688 !important;
+}
+
+.genre:hover{
+	color: gold;
+	background-color: #6c757d!important;
+}
+
+.the-chuong{
+	top: 2px;
+	left: 3px;
+	background-color: #f3be00;
+	text-shadow: 1px 1px 2px #111;
+	box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+	padding-bottom: 15px;
+	padding-top: 2px;
+	padding-left: 5px;
+	padding-right: 10px;
+	color: white;
+	clip-path: polygon(0 1%, 100% 0%, 100% 71%, 48% 100%, 0 71%);
+	border-color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+}
+
+.the-chuong2{
+	top: 2px;
+	left: 3px;
+	background-color: #f3be00;
+	text-shadow: 1px 1px 2px #111;
+	box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.75);
+	padding-bottom: 2px;
+	padding-top: 2px;
+	padding-left: 3px;
+	padding-right: 30px;
+	color: #000000;
+	clip-path: polygon(0% 0%, 75% 0%, 85% 50%, 75% 100%, 0% 100%);
+	border-color: #FFFFFF;
+}
+
+.link-nhieu{
+	font-size: 17px;
+	font-family: 'Playfair Display', serif;
+}
+
+body{
+	background-color: #EEE !important;
+}
+
+header{
+	position: relative !important;
+}
+
+.my-nav{
+	margin-top: -7px !important;
+}
+
+.font-robo{
+	font-family: 'Pridi', serif!important;
+	color: #ccc!important;
+	text-transform: uppercase;
+}
+
+.nguon{
+	word-break: break-all;
+}
+
+.bg-xanh{
+	background-color: #43535a;
+	color: #FFFFFF;
+}
+
+.bgg-trang{
+	color: #EEE;
+}
+
+.uncap{
+	text-transform: uppercase !important;
+}
+
+.my-bg-dark{
+	background-color: #171519 !important;
+}
+
+.ah-tls{
+	color: #e6e6e6!important;
+    background: #b13f3f;
+    padding: 0 6px;
+    margin-left: 4px;
+    text-shadow: 1px 1px 0px #000000;
+    border-radius: 4px;
+    box-shadow: 0 0 1px 1px #ff9696;
+    font-size: 18px!important;
+    font-family: 'Pridi', serif!important;
+    text-transform: uppercase;
+}
+
+.gif-header{
+	z-index: -1000;
+	overflow: hidden;
+	width: 100%;
+	height: 283px;
+	object-fit: cover;
+}
+
+.header-title{
+	position: absolute;
+	top: 35%;
+	left: 36%;
+}
+
+.header-link-video{
+	color: #FFF;
+	text-shadow: 5px 5px 15px #000;
+	font-weight: bold;
+	font-size: 45px;
+	text-transform: uppercase;
+}
+
+.header-link-video:hover{
+	text-decoration: none;
+	color: inherit;
+}
+
+.header-video-title{
+	color: #EEE;
+	text-transform: uppercase;
+	background-color: #423232;
+	text-align: center;
+	border-radius: 3px;
+	font-weight: bold;
+	padding: 8px 0px 8px 0px;
+}
+
+.cls{
+	clear: both !important;
+}
+
+.font-roman{
+	font-family: Times New Roman !important;
+}
+
+nav{
+	padding-top: 1px !important;
+	padding-bottom: 1px !important;
+}
+
+.my-form-search{
+	border: none !important;
+	position: relative !important;
+}
+
+.search-box{
+	position: absolute;
+	top: 5px;
+	right: 53px;
+	background-color: #2f3640;
+	height: 40px;
+	border-radius: 40px;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+.search-btn{
+	color: #e84118;
+	float: right;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #2f3640;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: all 2s;
+	margin-top: -10px;
+    margin-right: -10px;
+    border: none !important;
+    outline: none !important;
+}
+
+.search-txb{
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	padding: 0;
+	color: white;
+	font-size: 16px;
+	transition: all 0.5s;
+	/*line-height: 40px;*/
+	width: 0px;
+	margin-top: -3px;
+}
+
+.search-box:hover > .search-txb{
+	width: 240px;
+	padding-left: 20px;
+}
+
+.search-box:hover > .search-btn{
+	background-color: white;
+}
+
+
+.sub-menu-1{
+	background-color: #242424;
+	opacity: .95;
+	border-radius: 0px;
+}
+
+.nav-sub-menu{
+	border-bottom: 1px solid #423e3e;
+	color: rgba(255,255,255,.84) !important;
+}
+
+.nav-sub-menu:hover{
+	color: rgba(0,0,0,.84) !important;
+}
+
+.my-shadow{
+	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.bg-trang{
+	background-color: #FFF !important;
+}
+
+.myboder-1{
+	border-radius: 1px;
+}
+
+.myboder-2{
+	border-radius: 2px;
+}
+
+.myboder-3{
+	border-radius: 3px;
+}
+
+.my-t-shadow{
+	text-shadow: 0px 0px 1px #000 !important;
+}
+
+.my-card{
+	border-radius: 2px !important;
+}
+
+.title-truyen-home{
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: gold;
+}
+
+.an-chu{
+	overflow: hidden!important;
+	text-overflow: ellipsis!important;
+	white-space: nowrap!important;
+}
+
+.carousel-caption{
+	background-color: rgba(0,0,0,0.5) !important;
+    text-shadow: 1px 1px 2px #111;
+    color: gold;
+}
+
+.carousel-item{
+	height: 340px;
+}
+
+.my-thumb:hover{
+	transform: scale(.95);
+}
+
+a:hover{
+	text-decoration: none !important;
+}
+
+.ul-hoan-thanh{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ul-hoan-thanh li{
+	
+}
+
+.chu-nau{
+	color: #6c757d !important;
+}
+
+.hover:hover{
+	color: #007bff !important;
+}
+
+.footer-link{
+	font-size: 30px;
+	color: #FFFFFF;
+}
+
+.read-story{
+	text-transform: uppercase;
+	background-color: #f3a600 !important;
+	border-color: #b78a28 !important;
+    color: rgba(44,44,44,.84);
+    border: none;
+}
+
+.download-story{
+	text-transform: uppercase;
+	background-color: #456472 !important;
+    color: rgba(255,255,255,.84);
+    border: none;
+}
+
+.review-truyen{
+	font-family: Times New Roman;
+    text-align: justify;
+    font-size: 18px;
+    word-wrap: break-word;
+}
+
+.title-review{
+	background: url(http://2.bp.blogspot.com/-pdM2M4ONUaA/UwUEFvzCktI/AAAAAAAABNk/o5Lf07Qpd5w/s1600/title-bg.png) repeat-x bottom;
+    font-size: 20px;
+    padding: 5px 0 12px 10px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    text-transform: uppercase;
+    color: #ccc;
+    background-color: #3E3E3E;
+    font-family: Times New Roman !important;
+}
+
+#list-chaps{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#list-chaps li{
+	border-bottom: 1px solid #e8c3c3;
+}
+
+#list-chaps li a{
+	display: block;
+	padding: 8px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #6c757d;
+}
+
+#list-chaps li a:hover{
+	background-color: #ddd;
+	color: #007bff;
+}
+
+.btn-trang{
+	background-color: #d0def2;
+}
+
+.btn-page-of{
+	background-color: #ffd7bd;
+}
+
+.chuong-moi-5 ul{
+	margin: 0;
+	padding-left: 24px;
+}
+
+#body-truyen{
+	background: #c4b395 url(../images/skin-default.jpg);
+	/*background-position: center center;*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+	position: relative;
+}
+
+.my-btn-luot{
+	background-color: #FFFFFF;
+}
+
+.my-btn{
+	border-radius: 18px;
+}
+
+.my-button-like{
+	height: 56px;
+	width: 56px;
+	min-width: 56px;
+	padding-left: 16px;
+	padding-right: 16px;
+
+	padding-top: 12px;
+	padding-bottom: 12px;
+
+	background-color: #EEE !important;
+	box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
+	overflow: hidden;
+	color: rgba(0,0,0,.87);
+}
+
+.my-gage{
+	padding-left: 12px;
+	padding-right: 12px;
+
+	padding-top: 12px;
+	padding-bottom: 12px;
+
+	font-size: 15px;
+}
+
+#content-noi-dung{
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    text-align: justify;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    line-height: 1.42857143;
+    word-wrap: break-word;
+    font-size: 22px;
+}
+
+.btn-setting{
+	font-size: 25px;
+}
+
+.info-chap{
+	border-top: 1px solid #e2bdbd;
+}
+
+#popu-father{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: .8;
+	background-color: #171519;
+}
+
+.btn-closeee{
+	color: #FFF;
+	font-size: 13px;
+}
+
+.my-vien{
+	border: 1px solid #e8c3c3 !important;
+}
+
+.bg-toi{
+	background: linear-gradient(to bottom,rgb(56 51 51)0,rgb(177 131 131)100%);
+}
+
+.font-display{
+	font-family: 'Playfair Display', serif !important;
+}
+
+.bg-black{
+	background: linear-gradient(to bottom,rgba(49,49,49,1)0,rgba(38,38,38,1)100%) !important;
+}
+
+.footer-bottom{
+	height: 40px;
+	color: #DDD;
+}
+
+.ul-footer-bottom-right{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ul-footer-bottom-right li{
+	float: right;
+}
+
+.ul-footer-bottom-right li a{
+	display: inline-block;
+	padding: 0 5px;
+	line-height: 52px;
+	color: #DDD;
+}
+
+.ul-footer-bottom-right li a:hover{
+	color: gold;
+}
+
+.input-address{
+	background: #1F2C38;
+	color: #888888;
+	padding: 5px 10px;
+	border: none;
+	width: 70%;
+}
+
+.btn-submit-footer{
+	border: none;
+	background: #2A3C4C;
+	color: #C5C7CB;
+	padding: 2px 4px;
+	height: 35px;
+}
+
+.input-address:focus, .btn-submit-footer:focus{
+	border-radius: 0px !important;
+	border: none;
+	outline: none;
+}
+
+.hide-text{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cls{
+	clear:both;
+}
+
+.title-footer{
+	background: url(../../public/images/title-bg.png) repeat-x bottom;
+	padding-bottom: 12px;
+	padding-top: 5px;
+}
+
+.footer-contact-mini{
+	margin-bottom: 5px;
+	color: #FFFFFF;
+}
+
+.footer-contact-mini:hover{
+	text-decoration: none;
+	color: gold;
+}
+
+.ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ul li{
+	padding-top: 9px;
+}
+
+#hinh-kieu{
+	display: none;
+}
+
+@media (max-width: 800px){
+
+	.footer-top{
+		display: none;
+	}
+	.my-footer-bootom-right{
+		display: none;
+	}
+	.my-footer-bootom-left{
+		text-align: center;;
+	}
+
+	.my-footer{
+		padding: 0px!important;
+	}
+
+	.carousel-item{
+		height: 180px!important;
+	}
+	.carousel-item img{
+		height: 100%!important;
+	}
+	.truyen-de-cu{
+		margin-top: 1px;
+		padding-left: 1px !important;
+		padding-right: 1px !important;
+	}
+	.goi-y-tao-tai-khoan{
+		display: none;
+	}
+
+	#hinh-kieu{
+		display: block;
+	}
+	.container-fluid{
+		margin: 0px !important;
+		padding: 0px !important;
+	}
+
+	nav{
+		width: 100% !important;
+	}
+
+	header{
+		display: none;
+	}
+
+	.row{
+		width: 100% !important;
+		padding: 0px !important;
+		margin: 0px !important;
+	}
+
+	.col-md-8{
+		width: 100% !important;
+		padding: 0px !important;
+		margin-left: 0px !important;
+	}
+
+	.footer-right{
+		display: none;
+	}
+
+	#title-md{
+		display: none;
+	}
+
+	.btn-trai{
+		margin-left: 8px !important;
+	}
+
+	.btn-phai{
+		margin-right: 8px !important;
+		width: 83.09px;
+	}
+
+	#body-truyen{
+		margin-top: -15px !important;
+	}
+
+	.footer-left{
+		text-align: center;
+	}
+
+	.my-input-search{
+		position: unset;
+	}
+
+	.btn-search{
+		display: none;
+	}
+
+	.card-title-truyen{
+		padding-left: 0px!important;
+		padding-right: 0px!important;
+	}
+
+	.card-body-trang-truyen{
+		padding-left: 0px!important;
+		padding-right: 0px!important;
+	}
+
+	.the-chua{
+		position: relative;
+		width: 100%;
+	}
+
+	.search-box{
+		margin-top: -18px;
+		margin-right: -55px;
+	}
+
+	.search-txb{
+		width: 35%;
+	}
+
+	.dropdow-user{
+		top: 0;
+	    right: 0%; 
+	    left: 100%!important; 
+	    margin-top: 0; 
+	    margin-right: .125rem;
+	}
+
+	.an-banner{
+		display: none;
+	}
+
+	.phan-cach{
+		height: 1.25rem;
+	}
+}
+
+@media (max-width: 900px){
+	.my-input-search{
+		position: unset;
+	}
+
+	.btn-search{
+		display: none;
+	}
+
+	.my-nav{
+		background-color: #171519 !important;
+	}
+
+	.my-foot{
+		background-color: #171519 !important;
+	}
+
+	.test{
+		padding-right: 5px !important;
+		padding-left: 5px !important;
+	}
+
+	.my-pad{
+		padding: 0px !important;
+	}
+
+	.my-button-like{
+		margin-left: 5px !important;
+		margin-right: 5px !important;
+	}
+
+	.mr-truyenhoanthanh{
+		margin-top: 8px;
+		margin-bottom: 3px;
+		padding-left: 1px !important;
+		padding-right: 1px !important;
+	}
+
+	.banner-benduoi{
+		margin-top: 8px !important;
+		margin-bottom: 12px !important;
+	}
+
+	.my-carddd{
+		max-width: 100% !important;
+	}
+
+	.my-truyen-the-loai{
+		padding-left: 1px !important;
+		padding-right: 1px !important;
+	}
+
+	.an-noi-dung{
+		display: none;
+	}
+
+	.card-noi-dung-trang-truyen-chi-tiet{
+		margin-top: -2px !important;
+		margin-left: 0px !important;
+		margin-right: 0px !important;
+		border-radius: 0px!important;
+		border: 0px;
+		border-top: 1px solid #CCC;
+	}
+
+	.thanh-tran-chi-tiet-truyen{
+		margin-bottom: 0px !important;
+	}
+
+	.an-item{
+		display: none !important;
+	}
+
+	.search-box-mobile{
+		width: 200px;
+		height: 32px;
+		border: 1px solid #171519;
+		border-radius: 5px;
+	}
+
+	.search-btn-mobile{
+		height: 100%;
+		width: 31px;
+		outline: none!important;
+		border: 0;
+		background-color: #d0b8b8 !important;
+		padding: 0;
+		margin: 0;
+		color: #999;
+		border-bottom-right-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+
+	.search-txb-mobile{
+		width: 100%;
+		height: 100%;
+		color: #3e3636!important;
+		background-color: #d0b8b8 !important;
+		outline: none!important;
+		border: 0;
+		padding-left: 8px;
+		border-radius: 5px;
+	}
+
+	.form-search-my-custom{
+		height: 32px;
+		width: 200px;
+		margin: auto!important;
+		margin-top: 12px!important;
+	}
+
+}
+
+@media (max-width: 1000px){
+	.my-input-search{
+		position: unset;
+	}
+
+	.btn-search{
+		display: none;
+	}
+
+	.dung-laptop{
+		display: block!important;
+	}
+
+	.my-nav{
+		background: linear-gradient(to bottom,#474747 0,#212121 100%) !important;
+	}
+
+	.breadcrumb{
+		width: 100%!important;
+		overflow: hidden!important;
+		text-overflow: ellipsis!important;
+		white-space: nowrap!important;
+		font-size: 15px;
+	}
+}
