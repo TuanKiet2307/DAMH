@@ -94,7 +94,7 @@
 
             foreach($theloai as $val){
                 if($i < count($theloai))
-                    $result .= '<a href="#">'.$val['"ten"'].'</a>,';
+                    $result .= '<a href="#">'.$val["ten"].'</a>,';
                 else
                     $result .= '<a href="#">'.$val["ten"].'</a>';
                 $i++;
@@ -104,11 +104,40 @@
         }catch(PDOException $e){
             return $e->getMessage();
         }
+    }
 
+        function getTheLoai_HOME($truyen_id){
+            $conn = new dbCon();
+            $conn = $conn->connect();
+    
+            try{
+                $query = "SELECT ten FROM truyen_theloai WHERE truyen_id = :truyen_id";
+                $cmd = $conn->prepare($query);
+                $cmd->bindValue(":truyen_id", $truyen_id);
+                $cmd->execute();
+    
+                $theloai = $cmd->fetchAll();
+                $result = "";
+                $i = 1;
+    
+                foreach($theloai as $val){
+                    if($i < count($theloai))
+                        $result .= ' <a itemprop="genre" href="#" >'.$val['ten'].'</a>,';
+                    else
+                        $result .= ' <a itemprop="genre" href="#" >'.$val['ten'].'</a>';
+                    $i++;
+                }
+    
+                echo $result;
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+
+    }
+    
         // function getTenChuong($str){
         //     $arr = explode(':', $str);
         //     return $arr[0];
         // }
-    }
 
 ?>

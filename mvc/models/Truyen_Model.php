@@ -105,5 +105,41 @@
                 return $e->getMessage();
             }
         }
+
+
+        //trang chu
+        public function getTruyenHOT(){
+            try{
+                $query = "SELECT * FROM  truyen ORDER BY danhgia DESC LIMIT 16";
+                $cmd = $this->Truyen->prepare($query);
+                $cmd->execute();
+                return $cmd->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
+        public function getTruyenMoiCapNhat(){
+            try{
+                $query = "SELECT * FROM  truyen ORDER BY capnhat DESC LIMIT 27";
+                $cmd = $this->Truyen->prepare($query);
+                $cmd->execute();
+                return $cmd->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
+        public function getTruyenHoanThanh(){
+            try{
+                $query = "SELECT * FROM  truyen WHERE trangthai = 'Hoàn Thành' ORDER BY capnhat DESC LIMIT 12";
+                $cmd = $this->Truyen->prepare($query);
+                $cmd->execute();
+                return $cmd->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
     }
 ?>
