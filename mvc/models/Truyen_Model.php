@@ -106,6 +106,18 @@
             }
         }
 
+        public function capNhatXoaChuong($id){
+            try{
+                $query = "UPDATE truyen SET chuong = chuong - 1 WHERE id = :id";
+                $cmd = $this->Truyen->prepare($query);
+                $cmd->bindValue(":id", $id);
+                $cmd->execute();
+                return $cmd->rowCount();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
 
         //trang chu
         public function getTruyenHOT(){
@@ -141,5 +153,29 @@
             }
         }
 
+
+        public function truyenCungTacGia($tacgia){
+            try{
+                $query = "SELECT * FROM truyen WHERE tacgia = :tacgia";
+                $cmd = $this->Truyen->prepare($query);
+                $cmd->bindValue(":tacgia", $tacgia);
+                $cmd->execute();
+                return $cmd->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
+        public function xoaTruyen($truyen_id){
+            try{
+                $query = "DELETE FROM truyen WHERE id = :truyen_id";
+                $cmd = $this->Truyen->prepare($query);
+                $cmd->bindValue(":truyen_id", $truyen_id);
+                $cmd->execute();
+
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
     }
 ?>

@@ -8,15 +8,16 @@
         </a>
         <select id="hot-select" class="form-control new-select" aria-label="Chọn thể loại">
             <option value="all">Tất cả</option>
-            <option value="1">Tiên Hiệp</option>
-            <option value="2">Kiếm Hiệp</option>
+            <?php foreach(getTheLoai_Header() as $val) { ?>
+                <option value="1"><?php echo $val['ten'] ?></option>
+                <?php } ?>
         </select>
     </div>
     <div class="index-intro">
         <?php $stt = 1;
         foreach ($data['truyenHOT'] as $val) { ?>
             <div class="item top-<?php echo $stt ?>" itemscope>
-                <a href="" itemprop="url">
+                <a href="<?php echo APP_URL.'home/truyen/'.$val['ten_khongdau'] ?>" itemprop="url">
                     <?php if ($val['trangthai'] == "Hoàn Thành") { ?>
                         <span class="full-label"></span>
                     <?php  } ?>
@@ -45,9 +46,9 @@
             </a>
             <select id="new-select" class="form-control new-select" aria-label="Chọn thể loại">
                 <option value="all">Tất cả</option>
-                <option value="1">Tiên Hiệp</option>
-                <option value="2">Kiếm Hiệp</option>
-
+                <?php foreach(getTheLoai_Header() as $val) { ?>
+                <option value="1"><?php echo $val['ten'] ?></option>
+                <?php } ?>
             </select>
         </div>
         <?php $stt = 1; foreach ($data['truyenCapNhat'] as $val) { ?>
@@ -55,9 +56,9 @@
                 <div class="col-xs-9 col-sm-6 col-md-5 col-title">
                     <span class="glyphicon glyphicon-chevron-right"></span>
                     <h3 itemprop="name">
-                        <a href="#" title="<?php echo $val['ten'] ?>" itemprop="url"><?php echo $val['ten'] ?></a>
+                        <a href="<?php echo APP_URL.'home/truyen/'.$val['ten_khongdau'] ?>" title="<?php echo $val['ten'] ?>" itemprop="url"><?php echo $val['ten'] ?></a>
                     </h3>
-                    <span class="label-title label-hot"></span>
+                    <span class="label-title label-new"></span>
                 </div>
                 <div class="hidden-xs col-sm-3 col-md-3 col-cat text-888">
                     <?php getTheLoai_HOME($val['id'])  ?>
@@ -104,7 +105,7 @@
                     <div class="row">
                         <?php $stt = 1; foreach ($data['truyenHoanThanh'] as $val) { ?>
                         <div class="col-xs-4 col-sm-3 col-md-2">
-                            <a href="#" title="<?php echo $val['ten'] ?>">
+                            <a href="<?php echo APP_URL.'home/truyen/'.$val['ten_khongdau'] ?>" title="<?php echo $val['ten'] ?>">
                                 <img src="<?php storage_patch($val['hinh'])  ?>"  alt="<?php echo $val['ten'] ?>">
                                 <div class="caption">
                                     <h3><?php echo $val['ten'] ?></h3>

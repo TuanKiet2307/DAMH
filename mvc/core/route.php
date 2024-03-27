@@ -18,14 +18,14 @@
     define('XuLyThemTheLoaiTruyen', APP_URL.'admin/xu-ly-them-the-loai-truyen');
     define('XuLySuaTheLoaiTruyen', APP_URL.'admin/xu-ly-sua-the-loai-truyen');
     define('XuLyXoaTheLoaiTruyen', APP_URL.'admin/xu-ly-xoa-the-loai-truyen');
-       
+    
     //Truyen
     define('Truyen', APP_URL.'admin/truyen');
     define('ThemTruyen', APP_URL.'admin/them-truyen');
     define('XuLyThemTruyen', APP_URL.'admin/xu-ly-them-truyen');
     define('SuaTruyen', APP_URL.'admin/sua-truyen');
     define('XuLySuaTruyen', APP_URL.'admin/xu-ly-sua-truyen');
-
+    define('XuLyXoaTruyen', APP_URL.'admin/xu-ly-xoa-truyen');
 
     //Chuong
     define('DanhSachChuong', APP_URL.'admin/danh-sach-chuong');

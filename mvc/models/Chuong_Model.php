@@ -13,7 +13,7 @@
                 $cmd = $this->Chuong->prepare($query);
                 $cmd->bindValue(":truyen_id", $truyen_id);
                 $cmd->bindValue(":ten", $ten);
-                $cmd->bindValue(":ten_khongdau", (Slug($ten)));
+                $cmd->bindValue(":ten_khongdau", getTenChuong(Slug($ten)));
                 $cmd->bindValue(":noidung", $noidung);
                 $cmd->execute();
                 return $cmd->rowCount();
@@ -32,7 +32,20 @@
             }catch(PDOException $e){
                 return $e->getMessage();
             }
-        }     
+        }    
+        
+        public function getHome($truyen_id, $ten_khongdau){
+            try{
+                $query = "SELECT * FROM chuong WHERE truyen_id = :truyen_id AND ten_khongdau = :ten_khongdau";
+                $cmd = $this->Chuong->prepare($query);
+                $cmd->bindValue(":truyen_id", $truyen_id);
+                $cmd->bindValue(":ten_khongdau", $ten_khongdau);
+                $cmd->execute();
+                return $cmd->fetch();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }  
         
 
         public function sua($chuong_id, $ten, $noidung){
@@ -40,7 +53,7 @@
                 $query = "UPDATE chuong SET ten = :ten, ten_khongdau = :ten_khongdau, noidung = :noidung WHERE id = :id";
                 $cmd = $this->Chuong->prepare($query);
                 $cmd->bindValue(":ten", $ten);
-                $cmd->bindValue(":ten_khongdau", (Slug($ten)));
+                $cmd->bindValue(":ten_khongdau", getTenChuong(Slug($ten)));
                 $cmd->bindValue(":noidung", $noidung);
                 $cmd->bindValue(":id", $chuong_id);
                 $cmd->execute();
@@ -60,5 +73,17 @@
                 return $e->getMessage();
             }
         }  
+
+        public function xoaToanBo($truyen_id){
+            try{
+                $query = "DELETE FROM chuong WHERE truyen_id = :truyen_id";
+                $cmd = $this->Chuong->prepare($query);
+                $cmd->bindValue(":truyen_id", $truyen_id);
+                $cmd->execute();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }  
+        
     }
 ?>

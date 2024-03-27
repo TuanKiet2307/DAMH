@@ -153,6 +153,7 @@
 
             if($truyen >= 0 ){
                 $truyen_id = $this->model("Truyen_Model")->getID(Slug($_POST['ten']));
+                $this->model("TruyenTheLoai_Model")->xoa($truyen_id);
                 foreach($_POST['theloai'] as $val){
                     $this->model("TruyenTheLoai_Model")->them($truyen_id, $val);
                 }
@@ -160,6 +161,13 @@
             }else{
                 return redirect(ThemTruyen, 'Truyện đã tồn tại!');
             }          
+        }
+
+        function XuLyXoaTruyen($truyen_id){
+            $this->model("Chuong_Model")->xoaToanBo($truyen_id);  
+            $this->model("TruyenTheLoai_Model")->xoa($truyen_id);  
+            $this->model("Truyen_Model")->xoaTruyen($truyen_id);
+            return redirect(Truyen);
         }
 
 
@@ -186,6 +194,8 @@
 
         function XuLyXoaChuong($ten_khongdau, $id){
             $this->model("Chuong_Model")->xoa($id);  
+            $truyen = $this->model('Truyen_Model')->get($ten_khongdau);
+            $this->model("Truyen_Model")->capNhatXoaChuong($truyen['id']);  
             return redirect(DanhSachChuong.'/'.$ten_khongdau);
         }
     }

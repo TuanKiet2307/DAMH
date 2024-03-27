@@ -47,7 +47,7 @@
                                 <td>
                                     <a class="btn" href="<?php echo DanhSachChuong.'/'.$val['ten_khongdau'] ?>" ><i class="fas fa-list"></i></a>
                                     <a class="btn" href="<?php echo SuaTruyen.'/'.$val['ten_khongdau'] ?>" ><i class="fas fa-edit"></i></a>
-                                    <a href="" class="btn" onclick=""><i class="fas fa-trash-alt"></i></a>
+                                    <a href="<?php echo XuLyXoaTruyen.'/'.$val['id'] ?>" class="btn" onclick="return confirm('Bạn có muốn xóa truyện [<?php echo $val['ten'] ?>] ?')"><i class="fas fa-trash-alt"></i></a>
                                 </td>
                             </tr>    
                         <?php $stt++; } ?>       
