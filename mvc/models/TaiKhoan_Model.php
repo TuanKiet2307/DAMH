@@ -32,6 +32,30 @@
             }
         }
 
+        public function getAll(){
+            try{
+                $query = "SELECT * FROM TaiKhoan ";
+                $cmd = $this->TaiKhoan->prepare($query);
+                $cmd->execute();
+                return $cmd->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
+        public function sua($id, $quyen){
+            try{
+                $query = "UPDATE TaiKhoan SET quyen = :quyen WHERE id = :id";
+                $cmd = $this->TaiKhoan->prepare($query);
+                $cmd->bindValue(":quyen", $quyen);
+                $cmd->bindValue(":id", $id);
+                $cmd->execute();
+                return $cmd->rowCount();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
         public function DangNhap($tendangnhap, $matkhau){
             try{
                 $query = "SELECT * FROM taikhoan WHERE tendangnhap = :tendangnhap AND matkhau = :matkhau";

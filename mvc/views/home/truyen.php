@@ -237,7 +237,6 @@
             </div>
             <?php $stt++; } ?>
         </div>
-        <div class="list list-truyen list-side col-xs-12" id="ads-300x250-detail-truyen-bottom"></div>
     </div>
 </div>
 </div>

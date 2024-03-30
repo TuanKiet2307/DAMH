@@ -9,10 +9,11 @@
 
         public function them($truyen_id, $ten ){
             try{
-                $query = "INSERT INTO  truyen_theloai(truyen_id, ten) VALUES (:truyen_id, :ten)";
+                $query = "INSERT INTO  truyen_theloai(truyen_id, ten, ten_khongdau) VALUES (:truyen_id, :ten, :ten_khongdau)";
                 $cmd = $this->Truyen_TheLoai->prepare($query);
                 $cmd->bindValue(":truyen_id", $truyen_id);
                 $cmd->bindValue(":ten", $ten);
+                $cmd->bindValue(":ten_khongdau", Slug2($ten));
                 $cmd->execute();
                 return $cmd->rowCount();
             }catch(PDOException $e){

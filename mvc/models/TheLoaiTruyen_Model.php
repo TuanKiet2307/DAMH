@@ -12,7 +12,7 @@
                 $query = "INSERT INTO theloaitruyen(`ten`, `ten_khongdau`) VALUES (:ten, :ten_khongdau)";
                 $cmd = $this->TheLoaiTruyen->prepare($query);
                 $cmd->bindValue(":ten", $ten);
-                $cmd->bindValue(":ten_khongdau", Slug($ten));
+                $cmd->bindValue(":ten_khongdau", Slug2($ten));
                 $cmd->execute();
                 return $cmd->rowCount();
             }catch(PDOException $e){
@@ -37,7 +37,7 @@
                 $query = "UPDATE theloaitruyen SET ten= :ten, ten_khongdau= :ten_khongdau WHERE id= :id";
                 $cmd = $this->TheLoaiTruyen->prepare($query);
                 $cmd->bindValue(":ten", $ten);
-                $cmd->bindValue(":ten_khongdau", Slug($ten));
+                $cmd->bindValue(":ten_khongdau", Slug2($ten));
                 $cmd->bindValue(":id", $id);
                 $cmd->execute();
                 return $cmd->rowCount();

@@ -51,7 +51,7 @@
 
         public function get($ten_khongdau){
             try{
-                $query = "SELECT * FROM  truyen WHERE ten_khongdau = :ten_khongdau";
+                $query = "SELECT * FROM truyen WHERE ten_khongdau = :ten_khongdau";
                 $cmd = $this->Truyen->prepare($query);
                 $cmd->bindValue(":ten_khongdau", $ten_khongdau);
                 $cmd->execute();
@@ -173,6 +173,18 @@
                 $cmd->bindValue(":truyen_id", $truyen_id);
                 $cmd->execute();
 
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
+        public function getTruyenByTheLoai($theloai_khongdau){
+            try{
+                $query = "SELECT tr.*, tl.ten FROM truyen tr, truyen_theloai tl WHERE tr.id = tl.truyen_id AND tl.ten_khongdau = :ten_khongdau";
+                $cmd = $this->Truyen->prepare($query);
+                $cmd->bindValue(":ten_khongdau", $theloai_khongdau);
+                $cmd->execute();
+                return $cmd->fetchAll();
             }catch(PDOException $e){
                 return $e->getMessage();
             }

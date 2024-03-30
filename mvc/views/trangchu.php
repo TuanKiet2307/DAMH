@@ -2,30 +2,18 @@
 
 <!DOCTYPE html>
 <html lang="vi">
-    <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# book: http://ogp.me/ns/book# profile: http://ogp.me/ns/profile#">
+    <head >
         <meta charset="UTF-8">
-        <title>Đọc truyện online, đọc truyện hay</title>
+        <title>Đọc truyện</title>
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-        <meta name="description" content="Đọc truyện online, đọc truyện chữ, truyện hay, truyện full. Truyện Full luôn tổng hợp và cập nhật các chương truyện một cách nhanh nhất.">
-        <meta name="keywords" content="doc truyen, doc truyen online, truyen hay, truyen chu">
-
         <link href="<?php public_patch('trangchu/css/main.css')?>" rel="stylesheet">
-
+        <link href="<?php public_patch('js/vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
     </head>
     <body id="body_home">
        
         <div id="wrap">
             <div class="navbar navbar-default navbar-static-top" role="navigation" id="nav">
-                <script type="text/javascript">
-                    function getCookie(d) {
-                        d += "=";
-                        for (var b = decodeURIComponent(document.cookie).split(";"), c = [], a = 0; a < b.length; a++)
-                            0 == b[a].trim().indexOf(d) && (c = b[a].trim().split("="));
-                        return 0 < c.length ? c[1] : ""
-                    }
-                    var js_bgcolor = getCookie("bgcolor-cookie");
-                    "#232323" == js_bgcolor && (document.getElementsByTagName("body")[0].className += " dark-theme");
-                </script>
+             
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -41,56 +29,7 @@
                     <div class="navbar-collapse collapse" itemscope itemtype="https://schema.org/WebSite">
                         <meta itemprop="url" content="https://truyenfull.vn"/>
                         <ul class="control nav navbar-nav ">
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-list"></span>
-                                    Danh sách <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/truyen-moi/" title="Truyện mới cập nhật">Truyện mới cập nhật</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện Hot">Truyện Hot</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/truyen-full/" title="Truyện Full">Truyện Full</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/tien-hiep-hay/" title="Tiên Hiệp Hay">Tiên Hiệp Hay</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/kiem-hiep-hay/" title="Kiếm Hiệp Hay">Kiếm Hiệp Hay</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/truyen-teen-hay/" title="Truyện Teen Hay">Truyện Teen Hay</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/ngon-tinh-hay/" title="Ngôn Tình Hay">Ngôn Tình Hay</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/ngon-tinh-nguoc/" title="Ngôn Tình Ngược">Ngôn Tình Ngược</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/ngon-tinh-sung/" title="Ngôn Tình Sủng">Ngôn Tình Sủng</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/ngon-tinh-hai/" title="Ngôn Tình Hài">Ngôn Tình Hài</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/dam-my-hai/" title="Đam Mỹ Hài">Đam Mỹ Hài</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/dam-my-hay/" title="Đam Mỹ Hay">Đam Mỹ Hay</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/dam-my-h-van/" title="Đam Mỹ H Văn">Đam Mỹ H Văn</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/danh-sach/dam-my-sac/" title="Đam Mỹ Sắc">Đam Mỹ Sắc</a>
-                                    </li>
-                                </ul>
-                            </li>
+                            
                             <li class="dropdown">
                                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
                                     <span class="glyphicon glyphicon-list"></span>
@@ -102,7 +41,7 @@
                                         <div class="col-md-4">
                                             <ul class="dropdown-menu">
                                                 <li>
-                                                    <a href="#" title="Truyện <?php echo $val['ten'] ?>"><?php echo $val['ten'] ?> </a>
+                                                    <a href="<?php echo APP_URL.'theloai/'.$val['ten_khongdau'] ?>" title="Truyện <?php echo $val['ten'] ?>"><?php echo $val['ten'] ?> </a>
                                                 </li>                                                                   
                                             </ul>
                                         </div> 
@@ -110,51 +49,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-list"></span>
-                                    Phân loại theo Chương <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a href="https://truyenfull.vn/top-truyen/duoi-100-chuong/" title="Dưới 100 chương">Dưới 100 chương</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/top-truyen/100-500-chuong/" title="100 - 500 chương">100 - 500 chương</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/top-truyen/500-1000-chuong/" title="500 - 1000 chương">500 - 1000 chương</a>
-                                    </li>
-                                    <li>
-                                        <a href="https://truyenfull.vn/top-truyen/tren-1000-chuong/" title="Trên 1000 chương">Trên 1000 chương</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="https://nettruyenfull.com/" rel="nofollow" target="_blank" title="Truyện tranh">
-                                    <span class="glyphicon glyphicon-book" style="margin-right: 3px;"></span>
-                                    Truyện Tranh
-                                </a>
-                            </li>
-                            <li class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
-                                    <span class="glyphicon glyphicon-cog"></span>
-                                    Tùy chỉnh <span class="caret"></span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right settings">
-                                    <form class="form-horizontal">
-                                        <div class="form-group form-group-sm">
-                                            <label class="col-sm-2 col-md-5 control-label" for="truyen-background">Màu nền</label>
-                                            <div class="col-sm-5 col-md-7">
-                                                <select class="form-control" id="truyen-background">
-                                                    <option value="#F4F4F4" selected>Xám nhạt</option>
-                                                    <option value="#232323">Màu tối</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </li>
+                            
+                            
+                            
                         </ul>
                         <form class="navbar-form navbar-right" action="https://truyenfull.vn/tim-kiem/" role="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
                             <div class="input-group search-holder">
@@ -168,6 +65,31 @@
                             </div>
                             <div class="list-group list-search-res hide"></div>
                         </form>
+                        <ul class="control nav navbar-nav navbar-right">
+                            
+                           
+                            
+                            
+                            <li class="dropdown">
+                                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="far fa-user"></i>
+                                </a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <?php if($_SESSION['truyenfull_quyen'] == "admin") {?>
+                                    <li>
+                                        <a href="<?php echo bangdieukhien ?>" title="Truyện mới cập nhật">Dashboard</a>
+                                    </li>
+                                    <?php } ?>
+                                    <li>
+                                        <a href="" title="Truyện mới cập nhật">Truyện mới cập nhật</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo DangXuat ?>" title="Truyện mới cập nhật">Đăng Xuất</a>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <div class="navbar-breadcrumb">
@@ -191,11 +113,11 @@
                         Website hoạt động dưới Giấy phép truy cập mở <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License
                     </p>
 </a></div></div></div><div id="fb-root"></div>
-<script src="https://static.8cache.com/min/g/mainjs-14032024_2.js"></script>
+<script src="<?php public_patch('trangchu/js/mainjs-14032024_2.js')?>"></script>
 <noscript>
-    <link rel="stylesheet" type="text/css" href="https://static.8cache.com/min/g/maincss-14032024_2.css"/>
+    <link rel="stylesheet" type="text/css" href="<?php public_patch('trangchu/css/maincss-14032024_2.css')?>"/>
 </noscript>
 <script>
-    $('head').append('<link rel="stylesheet" type="text/css" href="https://static.8cache.com/min/g/maincss-14032024_1.css"/>');
+    $('head').append('<link rel="stylesheet" type="text/css" href="<?php public_patch('trangchu/css/maincss-14032024_1.css')?>"/>');
 </script>
 </body></html>

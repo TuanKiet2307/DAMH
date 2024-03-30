@@ -1,17 +1,12 @@
 <div class="container" id="intro-index">
     <div class="title-list">
         <h2>
-            <a href="https://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot">Truyện hot</a>
+            <a href="#" title="Truyện hot">Truyện hot</a>
         </h2>
-        <a href="https://truyenfull.vn/danh-sach/truyen-hot/" title="Truyện hot">
+        <a href="#" title="Truyện hot">
             <span class="glyphicon glyphicon-fire"></span>
         </a>
-        <select id="hot-select" class="form-control new-select" aria-label="Chọn thể loại">
-            <option value="all">Tất cả</option>
-            <?php foreach(getTheLoai_Header() as $val) { ?>
-                <option value="1"><?php echo $val['ten'] ?></option>
-                <?php } ?>
-        </select>
+       
     </div>
     <div class="index-intro">
         <?php $stt = 1;
@@ -27,8 +22,7 @@
                     </div>
                 </a>
             </div>
-        <?php $stt++;
-        } ?>
+        <?php $stt++; } ?>
     </div>
 </div>
 <div class="container" id="list-index">
@@ -44,12 +38,7 @@
             <a href="#" title="Truyện mới">
                 <span class="glyphicon glyphicon-menu-right"></span>
             </a>
-            <select id="new-select" class="form-control new-select" aria-label="Chọn thể loại">
-                <option value="all">Tất cả</option>
-                <?php foreach(getTheLoai_Header() as $val) { ?>
-                <option value="1"><?php echo $val['ten'] ?></option>
-                <?php } ?>
-            </select>
+            
         </div>
         <?php $stt = 1; foreach ($data['truyenCapNhat'] as $val) { ?>
             <div class="row" itemscope>
@@ -64,7 +53,7 @@
                     <?php getTheLoai_HOME($val['id'])  ?>
                 </div>
                 <div class="col-xs-3 col-sm-3 col-md-2 col-chap text-info">
-                    <a href="#" title="Hôm Nay Thiên Kim Lại Đi Vả Mặt - Chương 870">
+                    <a href="<?php echo APP_URL.'home/doctruyen/'.$val['ten_khongdau'].'/chuong-'.$val['chuong']; ?>" >
                         <span class="chapter-text">
                             <span>Chương </span>
                         </span>
@@ -85,7 +74,7 @@
                 <div class="row">
                     <?php $stt = 1; foreach ($data['theLoaiTruyen'] as $val) { ?>
                     <div class="col-xs-6">
-                        <a href="#" title="<?php echo $val['ten'] ?>"><?php echo $val['ten'] ?></a>
+                        <a href="<?php echo APP_URL.'theloai/'.$val['ten_khongdau'] ?>" title="<?php echo $val['ten'] ?>"><?php echo $val['ten'] ?></a>
                     </div>
                     <?php $stt++;} ?> 
                 </div>

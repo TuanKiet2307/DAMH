@@ -21,17 +21,34 @@
             $taikhoan = $this->model("TaiKhoan_Model")->DangNhap($_POST['tendangnhap'], $_POST['matkhau']);
             if($taikhoan == true){
                 $this->loginSession($this->model("TaiKhoan_Model")->get($_POST['tendangnhap']));
-                return redirect(bangdieukhien);
+                return redirect(APP_URL);
             }else{
                 return redirect(dangnhap, 'Tên đăng nhập hoặc mật khẩu không chính xác');
             }
-
         }
 
 
         function DangXuat(){
             $this->logOut();
-            return redirect(APP_URL);
+            return redirect(dangnhap);
+        }
+
+        function TaiKhoan(){
+            $this->view('admin', [
+                'title'   => 'Tài Khoản',
+                'page'    => 'admin/taikhoan',  
+                'taikhoan'    => $this->model("TaiKhoan_Model")->getAll()             
+            ]);
+        }
+
+        function XuLySuaTaiKhoan(){
+            $taikhoan = $this->model("TaiKhoan_Model")->sua($_POST['id'], $_POST['quyen']) ;
+
+            if($taikhoan === 1){
+                return redirect(TaiKhoan);
+            }else{
+                return redirect(TaiKhoan, 'Thể loại truyện bị trùng!');
+            }
         }
 
 

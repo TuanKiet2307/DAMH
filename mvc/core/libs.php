@@ -50,6 +50,26 @@
         return $str;
     }
 
+    function Slug2($str)
+    {
+        if (!$str) return false;
+
+        $utf8 = array(
+            'a' => 'à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ|À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ',
+            'd' => 'đ|Đ',
+            'e' => 'è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ|È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ',
+            'i' => 'ì|í|ị|ỉ|ĩ|Ì|Í|Ị|Ỉ|Ĩ',
+            'o' => 'ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ|Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ',
+            'u' => 'ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ|Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ',
+            'y' => 'ỳ|ý|ỵ|ỷ|ỹ|Ỳ|Ý|Ỵ|Ỷ|Ỹ',
+        );
+        foreach ($utf8 as $ascii => $uni) $str = preg_replace("/($uni)/i", $ascii, $str);
+        $str = str_replace(" ", "", $str);
+        $str = str_replace("/", "", $str);
+        $str = str_replace("'", "", $str);
+        return $str;
+    }
+
     function DateToTime($date)
     {
         $to_time = strtotime($date);
@@ -116,7 +136,7 @@
         $conn = $conn->connect();
 
         try {
-            $query = "SELECT ten FROM truyen_theloai WHERE truyen_id = :truyen_id";
+            $query = "SELECT * FROM truyen_theloai WHERE truyen_id = :truyen_id";
             $cmd = $conn->prepare($query);
             $cmd->bindValue(":truyen_id", $truyen_id);
             $cmd->execute();
@@ -127,9 +147,9 @@
 
             foreach ($theloai as $val) {
                 if ($i < count($theloai))
-                    $result .= ' <a itemprop="genre" href="#" >' . $val['ten'] . '</a>,';
+                    $result .= ' <a itemprop="genre" href="'.APP_URL.'theloai/'.$val['ten_khongdau'].'" >' . $val['ten'] . '</a>,';
                 else
-                    $result .= ' <a itemprop="genre" href="#" >' . $val['ten'] . '</a>';
+                    $result .= ' <a itemprop="genre" href="'.APP_URL.'theloai/'.$val['ten_khongdau'].'" >' . $val['ten'] . '</a>';
                 $i++;
             }
 

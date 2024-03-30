@@ -22,10 +22,13 @@
     //Truyen
     define('Truyen', APP_URL.'admin/truyen');
     define('ThemTruyen', APP_URL.'admin/them-truyen');
+    define('TaiKhoan', APP_URL.'admin/tai-khoan');
     define('XuLyThemTruyen', APP_URL.'admin/xu-ly-them-truyen');
     define('SuaTruyen', APP_URL.'admin/sua-truyen');
     define('XuLySuaTruyen', APP_URL.'admin/xu-ly-sua-truyen');
     define('XuLyXoaTruyen', APP_URL.'admin/xu-ly-xoa-truyen');
+
+    define('XuLySuaTaiKhoan', APP_URL.'admin/xu-ly-sua-tai-khoan');
 
     //Chuong
     define('DanhSachChuong', APP_URL.'admin/danh-sach-chuong');
