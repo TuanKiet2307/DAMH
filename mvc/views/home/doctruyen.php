@@ -26,8 +26,9 @@
                         <span class="hidden-xs">Chương </span>
                         trước
                     </a>
-                    <button type="button" class="btn btn-success btn-chapter-nav chapter_jump">
-                        <span class="glyphicon glyphicon-list-alt"></span>
+                    <?php $noidung = preg_replace('/\s+/', ' ',$data['chuong']['noidung']); ?>
+                    <button onclick="textToSpeech('<?php echo $noidung; ?>');" type="button" class="btn btn-success btn-chapter-nav chapter_jump">
+                        <span class=""><i class="fas fa-play"></i></span>
                     </button>
                     <a class="btn btn-success btn-chapter-nav" href="<?php 
                         $truyen_id = $data['truyen']['id'];
@@ -65,8 +66,8 @@
                         <span class="hidden-xs">Chương </span>
                         trước
                     </a>
-                    <button type="button" class="btn btn-success btn-chapter-nav chapter_jump">
-                        <span class="glyphicon glyphicon-list-alt"></span>
+                    <button onclick="textToSpeech('<?php echo $noidung; ?>');" type="button" class="btn btn-success btn-chapter-nav chapter_jump">
+                        <span class=""><i class="fas fa-play"></i></span>
                     </button>
                     <a class="btn btn-success btn-chapter-nav" href="<?php 
                         $truyen_id = $data['truyen']['id'];
@@ -81,52 +82,21 @@
                         tiếp <span class="glyphicon glyphicon-chevron-right"></span>
                     </a>
                 </div>
-                <div class="group_story text-center" style="padding: 0 5px 0 5px;display: inline-block;text-align: center !important;">
-                    <div class="bg-info col-xs-12 text-center box-notice mr-box" style="padding: 8px;">
-                        <a href="https://nettruyenfull.com/truyen-tranh/bach-luyen-thanh-than-s39/chap-1/15138?utm_source=truyenfull&utm_campaign=bach-luyen-thanh-than" target="_blank">
-                            Bách Luyện Thành Thần - Chuyện về một kẻ tôi luyện bản thân liên tục cho đến khi đạt tới <b style="color: red">đỉnh cao nhất của toàn bộ thể</b>
-                            giới này
-                        </a>
-                    </div>
-                    <div class="bg-info col-xs-12 text-center box-notice mr-box" style="padding: 8px;">
-                        <a href="https://nettruyenfull.com/truyen-tranh/vo-luyen-inh-phong-s2/chap-1/4?utm_source=truyenfull&utm_campaign=vo-luyen-inh-phong" target="_blank">
-                            Võ Luyện Đỉnh Phong - Sống trong nghịch cảnh, phát triển trong tuyệt địa, bất khuất không bỏ cuộc, mới có thể <b style="color: red">phá vỡ được cực đạo của võ thuật!</b>
-                        </a>
-                    </div>
-                    <div class="bg-info col-xs-12 text-center box-notice mr-box" style="padding: 8px;">
-                        <a href="https://nettruyenfull.com/truyen-tranh/thanh-thoi-thu-the-chung-chung-ien-sinh-sinh-te-s259/chap-0.000/70699?utm_source=truyenfull&utm_campaign=thanh-thoi-thu-the-chung-chung-ien-sinh-sinh-te" target="_blank">
-                            Lạc vào thế giới người thú nơi <b style="color: red">nam nhân đẹp như Khổng tước</b>
-                            còn nữ lại xấu không nỡ nhìn, cô gái lập nên <b style="color: red">hậu cung mỹ nam</b>
-                            , cuộc đời chạm đỉnh!
-                        </a>
-                    </div>
-                    <div class="bg-info col-xs-12 text-center box-notice mr-box" style="padding: 8px;">
-                        <a href="https://nettruyenfull.com/truyen-tranh/au-pha-thuong-khung-s152-152?utm_source=truyenfull&utm_campaign=dau-pha-thuong-khung" target="_blank">
-                            Đấu Phá Thương Khung - <b style="color: red">Một thiên tài tu luyện</b>
-                            trong phút chốc thành phế vật, từ phế vật từng bước <b style="color: red">khẳng định lại chính mình</b>
-                            !
-                        </a>
-                    </div>
-                    <div id="ads-timviec-list" style="padding: 10px;display: inline;"></div>
-                </div>
-               
-                <div class="text-center">
-                    <button type="button" class="btn btn-warning" id="chapter_error">
-                        <span class="glyphicon glyphicon-flag"></span>
-                        Báo lỗi chương
-                    </button>
-                    <button type="button" class="btn btn-info" id="chapter_comment">
-                        <span class="glyphicon glyphicon-comment"></span>
-                        Bình luận
-                    </button>
-                </div>
-                <div class="bg-info text-center visible-md visible-lg box-notice">Bạn có thể dùng phím mũi tên hoặc WASD để lùi/sang chương.</div>
-                <div class="col-xs-12">
-                    <div class="row" id="fb-comment-chapter"></div>
-                </div>
-
+                
+                
             </div>
         </div>
     </div>
 </div>
 </div>
+
+
+<!-- Script ResponsiveVoiceJS và mã JavaScript -->
+<script>
+// Hàm chuyển đổi văn bản thành giọng nói
+function textToSpeech(text) {
+    // Sử dụng ResponsiveVoiceJS để phát giọng nói
+    responsiveVoice.speak(text, "Vietnamese Female", {rate: 1});
+}
+</script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=PQrJj3jS"></script>

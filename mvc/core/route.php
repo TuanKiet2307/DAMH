@@ -29,6 +29,8 @@
     define('XuLyXoaTruyen', APP_URL.'admin/xu-ly-xoa-truyen');
 
     define('XuLySuaTaiKhoan', APP_URL.'admin/xu-ly-sua-tai-khoan');
+    define('XuLyTimTruyen', APP_URL.'home/xu-ly-tim-truyen');
+    define('timtruyen', APP_URL.'home/tim-truyen');
 
     //Chuong
     define('DanhSachChuong', APP_URL.'admin/danh-sach-chuong');

@@ -12,14 +12,18 @@
         }
 
         function truyen($ten_khongdau){ 
+                $pages = isset($_GET['pages']) ? $_GET['pages'] : 1;  
                 $truyen = $this->model("Truyen_Model")->get($ten_khongdau);
+                $count = $this->model("Chuong_Model")->count();
+
                 $this->view('trangchu', [
                     'title' => 'Truyện '.$truyen['ten'],
                     'page' => 'truyen',
                     'truyen' => $truyen,
                     'cungtacgia' => $this->model("Truyen_Model")->truyenCungTacGia($truyen['tacgia']),
-                    'chuong' => $this->model("Chuong_Model")->get($truyen['id']),
-                    'truyenHOT' => $this->model("Truyen_Model")->getTruyenHOT()
+                    'chuong' => $this->model("Chuong_Model")->get($truyen['id'], $pages),
+                    'truyenHOT' => $this->model("Truyen_Model")->getTruyenHOT(),
+                    'count' => $count
                 ]);
         }
 
@@ -34,6 +38,27 @@
                 'chuong' => $chuong
                 
             ]);
-    }
+        }
+        function xuLyTimTruyen(){ 
+            $truyen = $this->model("Truyen_Model")->timTruyen($_POST['ten']);
+            
+            if(!empty($truyen)){
+                $_SESSION['truyen'] = $truyen;
+                return redirect(timtruyen);
+            }else{
+                return redirect(timtruyen, 'Không tìm thấy truyện!');
+            }
+
+       
+        }
+
+        function timtruyen(){
+            $truyen = isset($_SESSION['truyen']) ? $_SESSION['truyen'] : array();
+            $this->view('trangchu', [
+                'title' => 'Truyện ',
+                'page' => 'timtruyen',  
+                'truyen' => $truyen
+            ]);
+        }
     }
 ?>

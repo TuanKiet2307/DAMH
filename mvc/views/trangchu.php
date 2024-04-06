@@ -1,7 +1,7 @@
 <?php require_once './mvc/core/libs.php'; require_once './mvc/core/route.php'; ?>
 
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
     <head >
         <meta charset="UTF-8">
         <title>Đọc truyện</title>
@@ -21,13 +21,18 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
-                        </button>
-                        <h1>
-                            <a class="header-logo" href="<?php echo APP_URL ?>" title="doc truyen">doc truyen</a>
-                        </h1>
+                        </button>               
+                            <ul class="control nav navbar-nav ">
+                                <li class="dropdown">
+                                    <a href="<?php echo APP_URL ?>"  title="Truyện tranh">
+                                        <span class="glyphicon glyphicon-book" style="margin-right: 3px;"></span>
+                                        Trang Chủ
+                                    </a>
+                                </li>
+                            </ul>           
                     </div>
                     <div class="navbar-collapse collapse" itemscope itemtype="https://schema.org/WebSite">
-                        <meta itemprop="url" content="https://truyenfull.vn"/>
+                        <meta itemprop="url" content="#"/>
                         <ul class="control nav navbar-nav ">
                             
                             <li class="dropdown">
@@ -53,10 +58,10 @@
                             
                             
                         </ul>
-                        <form class="navbar-form navbar-right" action="https://truyenfull.vn/tim-kiem/" role="search" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
+                        <form class="navbar-form navbar-right" action="<?php echo XuLyTimTruyen ?>"  method="POST" role="search"  >
                             <div class="input-group search-holder">
-                                <meta itemprop="target" content="https://truyenfull.vn/tim-kiem/?tukhoa={tukhoa}"/>
-                                <input aria-label="Từ khóa tìm kiếm" role="search key" class="form-control" id="search-input" type="search" name="tukhoa" placeholder="Tìm kiếm..." value itemprop="query-input" required>
+                                
+                                <input aria-label="Từ khóa tìm kiếm" role="search key" class="form-control" id="search-input" type="search" name="ten" placeholder="Tìm kiếm..." >
                                 <div class="input-group-btn">
                                     <button class="btn btn-default" type="submit" aria-label="Tìm kiếm" role="search">
                                         <span class="glyphicon glyphicon-search"></span>
@@ -110,9 +115,12 @@
                 <div class="col-xs-12 col-sm-12">
                     
                     <p>
-                        Website hoạt động dưới Giấy phép truy cập mở <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License
+                       Metal 2024
                     </p>
-</a></div></div></div><div id="fb-root"></div>
+                </div>
+            </div>
+        </div>
+    <div id="fb-root"></div>
 <script src="<?php public_patch('trangchu/js/mainjs-14032024_2.js')?>"></script>
 <noscript>
     <link rel="stylesheet" type="text/css" href="<?php public_patch('trangchu/css/maincss-14032024_2.css')?>"/>
@@ -120,4 +128,8 @@
 <script>
     $('head').append('<link rel="stylesheet" type="text/css" href="<?php public_patch('trangchu/css/maincss-14032024_1.css')?>"/>');
 </script>
+
+
+
+
 </body></html>

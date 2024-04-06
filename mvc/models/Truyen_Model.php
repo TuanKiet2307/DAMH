@@ -178,9 +178,12 @@
             }
         }
 
-        public function getTruyenByTheLoai($theloai_khongdau){
+        public function getTruyenByTheLoai($theloai_khongdau, $pages){
+            $row = 10;
+            $from = ($pages - 1)* $row;
+
             try{
-                $query = "SELECT tr.*, tl.ten FROM truyen tr, truyen_theloai tl WHERE tr.id = tl.truyen_id AND tl.ten_khongdau = :ten_khongdau";
+                $query = "SELECT tr.* FROM truyen tr, truyen_theloai tl WHERE tr.id = tl.truyen_id AND tl.ten_khongdau = :ten_khongdau LIMIT $from,$row";
                 $cmd = $this->Truyen->prepare($query);
                 $cmd->bindValue(":ten_khongdau", $theloai_khongdau);
                 $cmd->execute();
@@ -189,5 +192,30 @@
                 return $e->getMessage();
             }
         }
+
+        public function count(){
+            try{
+                $query = "SELECT * FROM truyen";
+                $cmd = $this->Truyen->prepare($query);
+                $cmd->execute();
+                return $cmd->rowCount();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
+        public function timTruyen($ten){
+            try{
+                $query = "SELECT * FROM truyen WHERE ten LIKE :ten";
+                $cmd = $this->Truyen->prepare($query);
+                $cmd->bindValue(":ten", '%'.$ten.'%');
+                $cmd->execute();
+                return $cmd->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
+
     }
 ?>

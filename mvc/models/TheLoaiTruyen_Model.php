@@ -22,7 +22,7 @@
 
         public function getAll(){
             try{
-                $query = "SELECT * FROM theloaitruyen ORDER BY ten DESC";
+                $query = "SELECT * FROM theloaitruyen ORDER BY ten ASC";
                 $cmd = $this->TheLoaiTruyen->prepare($query);
                 $cmd->execute();
                 return $cmd->fetchAll();
