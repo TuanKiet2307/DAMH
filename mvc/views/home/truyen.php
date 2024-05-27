@@ -3,6 +3,9 @@
     $pages = ceil($result / 10);
 ?>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
 <div class="container csstransforms3d" id="truyen">
     <div class="col-xs-12 col-sm-12 col-md-9 col-truyen-main">
         <div class="col-xs-12 col-info-desc" itemscope>
@@ -35,25 +38,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-8 col-md-8 desc">
-                <div class="rate">
-                    <div class="rate-holder" data-score="8.5"></div>
-                    <em class="rate-text"></em>
-                    <div class="small" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                        <em>
-                            Đánh giá:
-                            <strong>
-                                <span itemprop="ratingValue"><?php echo $data['truyen']['danhgia'] ?></span>
-                            </strong>
-                            /<span class="text-muted" itemprop="bestRating">0</span>
-                            từ
-                            <strong>
-                                <span itemprop="ratingCount">0</span>
-                                lượt
-                            </strong>
-                        </em>
-                    </div>
-                </div>
+            <div class="col-xs-12 col-sm-8 col-md-8 desc"> 
                 <div class="desc-text" itemprop="description">
                     <?php echo $data['truyen']['gioithieu'] ?>
                 </div>
@@ -69,9 +54,76 @@
                 <h2>Danh sách chương</h2>
             </div>
             <div class="row">
-                <?php foreach($data['chuong'] as $val) {?>
+                <?php $dem=1; foreach($data['chuong'] as $val) {?>
                 <div class="col-xs-12 col-sm-6 col-md-6">
                     <ul class="list-chapter">
+                    <?php if($data['truyen']['chuong'] == $dem) {?>
+                        <li>
+                        <span class="glyphicon glyphicon-certificate"></span>
+                        
+                         <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Mở Chương</h5>
+                                    </div>
+                                    <?php if($_SESSION['truyenfull_xu'] >= 50) { ?>       
+                                    <div class="modal-body">
+                                    <form id="truxuForm" action="<?php echo XuLyTruXu; ?>" method="POST">
+                                        <input type="hidden" name="id" value="<?php echo $_SESSION['truyenfull_id'] ?>">
+                                        
+                                        <input type="hidden" name="xu" value="<?php echo $_SESSION['truyenfull_xu'] ?>">
+                                        <input type="hidden" name="tendangnhap" value="<?php echo $_SESSION['truyenfull_user'] ?>">
+                                        Dùng 50 xu để mở chương mới nhất !
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button> 
+                                        <button id="complete-button" type="button" class="btn btn-primary" data-bs-dismiss="modal">Hoàn Thành</button>
+                                    </div>
+                                    </form>
+                                    <?php }else { ?>
+                                    <div class="modal-body">
+                                        Bạn không đủ xu !
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button> 
+                                    </div>
+                                    <?php } ?>
+                                </div>   
+                            </div>
+                        </div>
+
+
+                        <script>
+                           document.getElementById('complete-button').addEventListener('click', function(event) {
+                               
+                                const form = document.getElementById('truxuForm');
+                                const formData = new FormData(form);
+
+                                fetch(form.action, {
+                                    method: 'POST',
+                                    body: formData
+                                })
+                                
+                                window.location.href = "<?php echo APP_URL . 'home/doctruyen/' . $data['truyen']['ten_khongdau'] . '/' . $val['ten_khongdau']; ?>";
+                            
+                            });
+
+                        </script>
+
+
+
+                            <a href="<?php echo APP_URL.'home/doctruyen/'.$data['truyen']['ten_khongdau'].'/'.$val['ten_khongdau'] ?>" title="<?php echo $val['ten'] ?>" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                <span class="chapter-text">
+                                    
+                                </span>
+                                <?php echo $val['ten'] ?>
+                            </a>
+                        </li>
+                       
+
+                        <?php }else{ ?>  
                         <li>
                             <span class="glyphicon glyphicon-certificate"></span>
                             <a href="<?php echo APP_URL.'home/doctruyen/'.$data['truyen']['ten_khongdau'].'/'.$val['ten_khongdau'] ?>" title="<?php echo $val['ten'] ?>">
@@ -81,16 +133,12 @@
                                 <?php echo $val['ten'] ?>
                             </a>
                         </li>  
+                        <?php } ?>
                     </ul>
                 </div>
-                <?php } ?>
+                <?php $dem++;} ?>
             </div>
-            <input id="truyen-id" type="hidden" value="20413">
-            <input id="total-page" type="hidden" value="31">
-            <input id="truyen-ascii" type="hidden" value="chu-gioi-tan-the-online-ngay-tan-cua-the-gioi">
-            <input id="truyen-comment" type="hidden" value="chu-gioi-tan-the-online">
-            <input id="chapter-sac" type="hidden" value="0">
-            <input id="truyen-time" type="hidden" value="1602611933">
+     
             <ul class="pagination pagination-sm">
             <ul class="pagination pagination-sm">
                 <?php for ($i = 1; $i <= $pages; $i++) { ?>
@@ -144,3 +192,13 @@
     </div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+

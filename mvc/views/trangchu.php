@@ -4,10 +4,12 @@
 <html lang="en">
     <head >
         <meta charset="UTF-8">
-        <title>Đọc truyện</title>
+        <title><?php echo $data['title'] ?></title>
         <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
         <link href="<?php public_patch('trangchu/css/main.css')?>" rel="stylesheet">
         <link href="<?php public_patch('js/vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
+       
+    
     </head>
     <body id="body_home">
        
@@ -40,6 +42,9 @@
                                     <span class="glyphicon glyphicon-list"></span>
                                     Thể loại <span class="caret"></span>
                                 </a>
+                                
+                                    
+                                
                                 <div class="dropdown-menu multi-column">
                                     <div class="row">
                                         <?php foreach(getTheLoai_Header() as $val) { ?>
@@ -54,7 +59,6 @@
                                     </div>
                                 </div>
                             </li>
-                            
                             
                             
                         </ul>
@@ -73,21 +77,33 @@
                         <ul class="control nav navbar-nav navbar-right">
                             
                            
-                            
+                            <li>
+                            <div class="translate" id="google_translate_element"></div>
+
+                            <script type="text/javascript">
+                                function googleTranslateElementInit() {  new google.translate.TranslateElement({pageLanguage: 'vi'}, 'google_translate_element');}
+                            </script>
+                            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+                            </li>
                             
                             <li class="dropdown">
                                 <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+                                <?php echo $_SESSION['truyenfull_user'] ?>
                                 <i class="far fa-user"></i>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="#" title="Truyện mới cập nhật"><?php echo $_SESSION['truyenfull_xu'] ?> Xu</a>
+                                    </li>
                                     <?php if($_SESSION['truyenfull_quyen'] == "admin") {?>
                                     <li>
-                                        <a href="<?php echo bangdieukhien ?>" title="Truyện mới cập nhật">Dashboard</a>
+                                        <a href="<?php echo Truyen ?>" title="Truyện mới cập nhật">Dashboard</a>
                                     </li>
                                     <?php } ?>
                                     <li>
-                                        <a href="" title="Truyện mới cập nhật">Truyện mới cập nhật</a>
-                                    </li>
+                                        <a href="<?php echo napthe ?>" title="Truyện mới cập nhật">Nạp Xu</a>
+                                    </li>    
                                     <li>
                                         <a href="<?php echo DangXuat ?>" title="Truyện mới cập nhật">Đăng Xuất</a>
                                     </li>
@@ -120,8 +136,9 @@
                 </div>
             </div>
         </div>
-    <div id="fb-root"></div>
+    
 <script src="<?php public_patch('trangchu/js/mainjs-14032024_2.js')?>"></script>
+<script src="<?php public_patch('js/jquery-3.6.0.min.js')?>"></script>
 <noscript>
     <link rel="stylesheet" type="text/css" href="<?php public_patch('trangchu/css/maincss-14032024_2.css')?>"/>
 </noscript>

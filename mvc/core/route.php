@@ -11,6 +11,8 @@
 
     //Bang Dieu Khien
     define('bangdieukhien', APP_URL.'admin/bang-dieu-khien');
+    define('napthe', APP_URL.'home/nap-the');
+    define('XuLyTruXu', APP_URL.'home/xu-ly-tru-xu');
 
 
     // The Loai truyen
@@ -21,16 +23,18 @@
     
     //Truyen
     define('Truyen', APP_URL.'admin/truyen');
-    define('ThemTruyen', APP_URL.'admin/them-truyen');
-    define('TaiKhoan', APP_URL.'admin/tai-khoan');
+    define('ThemTruyen', APP_URL.'admin/them-truyen'); 
     define('XuLyThemTruyen', APP_URL.'admin/xu-ly-them-truyen');
     define('SuaTruyen', APP_URL.'admin/sua-truyen');
     define('XuLySuaTruyen', APP_URL.'admin/xu-ly-sua-truyen');
     define('XuLyXoaTruyen', APP_URL.'admin/xu-ly-xoa-truyen');
-
-    define('XuLySuaTaiKhoan', APP_URL.'admin/xu-ly-sua-tai-khoan');
     define('XuLyTimTruyen', APP_URL.'home/xu-ly-tim-truyen');
     define('timtruyen', APP_URL.'home/tim-truyen');
+
+
+    //Tai Khoan
+    define('XuLySuaTaiKhoan', APP_URL.'admin/xu-ly-sua-tai-khoan');
+    define('TaiKhoan', APP_URL.'admin/tai-khoan');
 
     //Chuong
     define('DanhSachChuong', APP_URL.'admin/danh-sach-chuong');

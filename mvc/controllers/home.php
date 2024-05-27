@@ -39,6 +39,20 @@
                 
             ]);
         }
+
+        function XuLyTruXu(){
+            $taikhoan = $this->model("TaiKhoan_Model")->truxu($_POST['id'], $_POST['xu']) ;
+            $this->loginSession($this->model("TaiKhoan_Model")->get($_POST['tendangnhap']));
+        }
+
+        function napthe(){      
+            $this->view('trangchu', [
+                'title' => 'Truyện ',
+                'page' => 'napthe',
+                
+            ]);
+        }
+
         function xuLyTimTruyen(){ 
             $truyen = $this->model("Truyen_Model")->timTruyen($_POST['ten']);
             
@@ -57,7 +71,8 @@
             $this->view('trangchu', [
                 'title' => 'Truyện ',
                 'page' => 'timtruyen',  
-                'truyen' => $truyen
+                'truyen' => $truyen,
+                'truyenHOT' => $this->model("Truyen_Model")->getTruyenHOT(),
             ]);
         }
     }

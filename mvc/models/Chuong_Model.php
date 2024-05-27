@@ -22,12 +22,26 @@
             }
         }
 
-        public function get($truyen_id, $pages){
+        public function gettrang($truyen_id, $pages){
             $row = 10;
             $from = ($pages - 1)* $row;
 
             try{
                 $query = "SELECT * FROM chuong WHERE truyen_id = :truyen_id LIMIT $from,$row";
+                $cmd = $this->Chuong->prepare($query);
+                $cmd->bindValue(":truyen_id", $truyen_id);
+                $cmd->execute();
+                return $cmd->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }  
+
+        public function get($truyen_id){
+       
+
+            try{
+                $query = "SELECT * FROM chuong WHERE truyen_id = :truyen_id ";
                 $cmd = $this->Chuong->prepare($query);
                 $cmd->bindValue(":truyen_id", $truyen_id);
                 $cmd->execute();

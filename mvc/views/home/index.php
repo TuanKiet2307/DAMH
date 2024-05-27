@@ -53,12 +53,12 @@
                     <?php getTheLoai_HOME($val['id'])  ?>
                 </div>
                 <div class="col-xs-3 col-sm-3 col-md-2 col-chap text-info">
-                    <a href="<?php echo APP_URL.'home/doctruyen/'.$val['ten_khongdau'].'/chuong-'.$val['chuong']; ?>" >
+                    <div >
                         <span class="chapter-text">
                             <span>Chương </span>
                         </span>
                         <?php echo $val['chuong'] ?>
-                    </a>
+                    </div>
                 </div>
                 <div class="hidden-xs hidden-sm col-md-2 col-time text-888"><?php echo DateToTime($val['capnhat']) ?></div>
             </div>

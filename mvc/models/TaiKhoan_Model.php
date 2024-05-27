@@ -56,6 +56,20 @@
             }
         }
 
+        public function truxu($id, $xu){
+            $xus = $xu - 50;
+            try{
+                $query = "UPDATE TaiKhoan SET xu = :xu WHERE id = :id";
+                $cmd = $this->TaiKhoan->prepare($query);
+                $cmd->bindValue(":xu", $xus);
+                $cmd->bindValue(":id", $id);
+                $cmd->execute();
+                return $cmd->rowCount();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+        }
+
         public function DangNhap($tendangnhap, $matkhau){
             try{
                 $query = "SELECT * FROM taikhoan WHERE tendangnhap = :tendangnhap AND matkhau = :matkhau";

@@ -36,7 +36,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center nav-link <?php active('admin/bang-dieu-khien', 'active')?>" href="<?php echo bangdieukhien ?>">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center nav-link" href="#">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -54,17 +54,22 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Interface
+                Trang Chủ
             </div>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link <?php active('admin/the-loai-truyen', 'active')?>" href="<?php echo theloaitruyen ?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Thể Loại Truyện</span></a>
-            </li>
 
-            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link " href="<?php echo APP_URL?>">
+                    <i class="fas fa-home"></i>
+                    <span>Trang Chủ</span></a>
+            </li>
+            <!-- Nav Item - Charts -->
+            <hr class="sidebar-divider">
+
+            <div class="sidebar-heading">
+                Truyện
+            </div>
+
             <li class="nav-item">
                 <a class="nav-link <?php active('admin/truyen', 'active'); active('admin/sua-truyen', 'active'); active('admin/danh-sach-chuong', 'active'); ?>" href="<?php echo Truyen ?>">
                     <i class="nav-icon fas fa-list"></i>
@@ -76,11 +81,26 @@
                     <i class="nav-icon fas fa-plus"></i>
                     <span>Thêm Truyện</span></a>
             </li>
+            
+            <li class="nav-item">
+                <a class="nav-link <?php active('admin/the-loai-truyen', 'active')?>" href="<?php echo theloaitruyen ?>">
+                    <i class="nav-icon fas fa-list"></i>
+                    <span>Thể Loại Truyện</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+           
+
+            
+            <hr class="sidebar-divider">
+            <div class="sidebar-heading">
+                Tài Khoản
+            </div>
             <?php if($_SESSION['truyenfull_quyen'] == "admin") {?>
             <li class="nav-item">
                 <a class="nav-link <?php active('admin/tai-khoan', 'active')?>" href="<?php echo TaiKhoan ?>">
                     <i class="nav-icon fas fa-user"></i>
-                    <span>Tài Khoản</span></a>
+                    <span>Phân Quyền</span></a>
             </li>
             <?php } ?>
             <!-- Divider -->
@@ -105,22 +125,9 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="nav-link <?php active('admin/bang-dieu-khien', 'active')?>" href="<?php echo APP_URL ?>">
                     
-                    <span>Trang Chủ</span></a>
                     <!-- Topbar Search -->
-                    <form
-                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                                aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                    
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -139,7 +146,7 @@
                               
                                 <a class="dropdown-item" href="<?php echo DangXuat ?>"  >
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Đăng Xuất
                                 </a>
                             </div>
                         </li>

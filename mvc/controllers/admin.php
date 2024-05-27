@@ -47,9 +47,11 @@
             if($taikhoan === 1){
                 return redirect(TaiKhoan);
             }else{
-                return redirect(TaiKhoan, 'Thể loại truyện bị trùng!');
+                return redirect(TaiKhoan, 'Lỗi không xác định!');
             }
         }
+
+       
 
 
         function bangdieukhien(){
@@ -82,7 +84,7 @@
             if($theloai === 1){
                 return redirect(theloaitruyen);
             }else{
-                return redirect(theloaitruyen, 'Thể loại truyện bị trùng!');
+                return redirect(theloaitruyen, 'Lỗi không xác định!');
             }
         }
 
@@ -176,7 +178,7 @@
                 }
                 return redirect(Truyen);
             }else{
-                return redirect(ThemTruyen, 'Truyện đã tồn tại!');
+                return redirect(ThemTruyen, 'Lỗi không xác định!');
             }          
         }
 

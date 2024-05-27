@@ -11,5 +11,7 @@
                 'truyenHOT' => $this->model("Truyen_Model")->getTruyenHOT()
             ]);
     }
+
+
     }
 ?>

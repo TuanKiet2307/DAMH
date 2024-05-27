@@ -4,7 +4,7 @@
             
             <a class="truyen-title" href="<?php echo APP_URL.'home/truyen/'.$data['truyen']['ten_khongdau'] ?>" title="<?php echo $data['truyen']['ten'] ?>"><?php echo $data['truyen']['ten'] ?></a>
             <h2>
-                <a class="chapter-title" href="#" title="Chương 1: Hố người chết">
+                <a class="chapter-title" href="#" title="">
                     
                     <?php echo $data['chuong']['ten'] ?>
                 </a>
@@ -89,14 +89,15 @@
     </div>
 </div>
 </div>
-
-
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=0F3XiEgM"></script>
 <!-- Script ResponsiveVoiceJS và mã JavaScript -->
 <script>
 // Hàm chuyển đổi văn bản thành giọng nói
 function textToSpeech(text) {
     // Sử dụng ResponsiveVoiceJS để phát giọng nói
+    
+
     responsiveVoice.speak(text, "Vietnamese Female", {rate: 1});
 }
 </script>
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=PQrJj3jS"></script>
+
